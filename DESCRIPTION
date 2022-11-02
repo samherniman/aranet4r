@@ -1,0 +1,19 @@
+Package: aranet4r
+Title: Import, combine and manipulate Aranet4 Carbon Dioxide measurements
+Version: 0.0.0.9000
+Authors@R: 
+    person("Sam", "Herniman", , "herniman.sam@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0001-7663-2897"))
+Description: Use this package to combine CSVs that have been exported from your Aranet4 device and make graphs of the results.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.1
+Imports: 
+    data.table,
+    fs,
+    lubridate,
+    stringr
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3

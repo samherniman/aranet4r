@@ -18,7 +18,9 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The [Aranet4](https://aranet.com/products/aranet4/) is a portable indoor air quality sensor for measuring CO^2^, temperature, atmospheric pressure and relative humidity. These devices are accurate and fun to use, however they are unable to store historic measurements for longer than a fortnight. This package is designed to combine exported 
+The [Aranet4](https://aranet.com/products/aranet4/) is a portable indoor air quality sensor for measuring CO^2^, temperature, atmospheric pressure and relative humidity. These devices are accurate and fun to use, however they are unable to store historic measurements for longer than a fortnight. This package is designed to combine exported Aranet files (in CSV format) into a single dataframe.  
+
+Currently, this package has a single function which combines all your Aranet files into one and removes duplicate entries. Eventually this package will include functions to plot these results, add them to a database, and potentially connect directly to one's device.
 
 ## Installation
 
@@ -29,27 +31,21 @@ You can install the development version of aranet4r from [GitHub](https://github
 devtools::install_github("samherniman/aranet4r")
 ```
 
-## Example
+## Reccommended workflow
 
-This is a basic example which shows you how to solve a common problem:
+The following is the workflow that I use, feel free to use whatever method you would like.
+
+1. Connect to your Aranet4 through Bluetooth on your phone 📱 using the Aranet4 app (available on the App Store and Google Play Store)
+2. Export Aranet data to a cloud drive that syncs with your computer, like iCloud. Share menu >> save to files >> new folder (name it _Aranet4_ or something) >> save
+3. Use `read_aranet(path/to/your/aranet/files)` to read in the files
 
 ```{r example}
 library(aranet4r)
-## basic example code
+
+df <- read_aranet(system.file("extdata", package = "aranet4r"))
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
-
-```{r cars}
-summary(cars)
+```{r df}
+df
 ```
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this. You could also use GitHub Actions to re-render `README.Rmd` every time you push. An example workflow can be found here: <https://github.com/r-lib/actions/tree/v1/examples>.
-
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.

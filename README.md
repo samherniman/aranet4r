@@ -38,7 +38,7 @@ method you would like.
 2.  Export Aranet data to a cloud drive that syncs with your computer,
     like iCloud. Share menu \>\> save to files \>\> new folder (name it
     *Aranet4* or something) \>\> save
-3.  Use `read_aranet(path/to/your/aranet/files)` to read in the files
+3.  Use `read_aranet("path/to/your/aranet/files")` to read in the files
 
 ``` r
 library(aranet4r)

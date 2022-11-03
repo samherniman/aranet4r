@@ -12,28 +12,32 @@ read_one_aranet <- function(x) {
     stringr::str_split("_", n = 2, simplify = TRUE)
 
   dt <- data.table::fread(x)
-  dt$temp <- dt[,3]
-  dt[,3] <- NULL
+  dt$temp <- dt[, 3]
+  dt[, 3] <- NULL
 
   data.table::setnames(
     dt,
-    c("Time(dd/mm/yyyy)",
+    c(
+      "Time(dd/mm/yyyy)",
       "Carbon dioxide(ppm)",
       "Relative humidity(%)",
       "Atmospheric pressure(hPa)",
-      "temp"),
-    c("recorded_date_time",
+      "temp"
+    ),
+    c(
+      "recorded_date_time",
       "carbon_dioxide_ppm",
       "relative_humidity_percent",
       "atmospheric_pressure_hpa",
-      "temperature_celcius")
+      "temperature_celcius"
     )
+  )
 
-  dt <- dt[, ':='(
+  dt <- dt[, ":="(
     recorded_date_time = lubridate::dmy_hms(recorded_date_time),
     sensor_display_name = as.factor(meta_d[1]),
     export_date_time = lubridate::ymd_hms(meta_d[2])
-  ),]
+  ), ]
 
   return(dt)
 }
@@ -71,7 +75,7 @@ read_aranet <- function(x) {
 
   df <- lapply(x, read_one_aranet)
   df <- do.call(rbind, df)
-  df <- df[!duplicated(df[,1:6]),]
+  df <- df[!duplicated(df[, 1:6]), ]
 
   return(df)
 }

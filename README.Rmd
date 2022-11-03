@@ -37,7 +37,7 @@ The following is the workflow that I use, feel free to use whatever method you w
 
 1. Connect to your Aranet4 through Bluetooth on your phone 📱 using the Aranet4 app (available on the App Store and Google Play Store)
 2. Export Aranet data to a cloud drive that syncs with your computer, like iCloud. Share menu >> save to files >> new folder (name it _Aranet4_ or something) >> save
-3. Use `read_aranet(path/to/your/aranet/files)` to read in the files
+3. Use `read_aranet("path/to/your/aranet/files")` to read in the files
 
 ```{r example}
 library(aranet4r)

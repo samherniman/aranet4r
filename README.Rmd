@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 # aranet4r
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/samherniman/aranet4r/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/samherniman/aranet4r/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 The [Aranet4](https://aranet.com/products/aranet4/) is a portable indoor air quality sensor for measuring CO^2^, temperature, atmospheric pressure and relative humidity. These devices are accurate and fun to use, however they are unable to store historic measurements for longer than a fortnight. This package is designed to combine exported Aranet files (in CSV format) into a single dataframe.  

@@ -4,6 +4,8 @@
 # aranet4r
 
 <!-- badges: start -->
+
+[![R-CMD-check](https://github.com/samherniman/aranet4r/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/samherniman/aranet4r/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 The [Aranet4](https://aranet.com/products/aranet4/) is a portable indoor

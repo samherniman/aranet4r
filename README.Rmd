@@ -16,10 +16,12 @@ knitr::opts_chunk$set(
 # aranet4r
 
 <!-- badges: start -->
-[![R-CMD-check](https://github.com/samherniman/aranet4r/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/samherniman/aranet4r/actions/workflows/R-CMD-check.yaml)
+
+[![R-CMD-check](https://github.com/samherniman/aranet4r/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/samherniman/aranet4r/actions/workflows/R-CMD-check.yaml) [![Codecov test coverage](https://codecov.io/gh/samherniman/aranet4r/branch/main/graph/badge.svg)](https://app.codecov.io/gh/samherniman/aranet4r?branch=main)
+
 <!-- badges: end -->
 
-The [Aranet4](https://aranet.com/products/aranet4/) is a portable indoor air quality sensor for measuring CO^2^, temperature, atmospheric pressure and relative humidity. These devices are accurate and fun to use, however they are unable to store historic measurements for longer than a fortnight. This package is designed to combine exported Aranet files (in CSV format) into a single dataframe.  
+The [Aranet4](https://aranet.com/products/aranet4/) is a portable indoor air quality sensor for measuring CO^2^, temperature, atmospheric pressure and relative humidity. These devices are accurate and fun to use, however they are unable to store historic measurements for longer than a fortnight. This package is designed to combine exported Aranet files (in CSV format) into a single dataframe.
 
 Currently, this package has a single function which combines all your Aranet files into one and removes duplicate entries. Eventually this package will include functions to plot these results, add them to a database, and potentially connect directly to one's device.
 
@@ -28,17 +30,17 @@ Currently, this package has a single function which combines all your Aranet fil
 You can install the development version of aranet4r from [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("samherniman/aranet4r")
+# install.packages("pak")
+pak::pkg_install("samherniman/aranet4r")
 ```
 
-## Reccommended workflow
+## Recommended workflow
 
-The following is the workflow that I use, feel free to use whatever method you would like.
+The following is the workflow that I use, feel free to use whatever method you would like. The main takeaway is to save all of your aranet4 CSVs to a single folder and then run `read_aranet` on that folder. This will then return a dataframe with all of them combined.
 
-1. Connect to your Aranet4 through Bluetooth on your phone 📱 using the Aranet4 app (available on the App Store and Google Play Store)
-2. Export Aranet data to a cloud drive that syncs with your computer, like iCloud. Share menu >> save to files >> new folder (name it _Aranet4_ or something) >> save
-3. Use `read_aranet("path/to/your/aranet/files")` to read in the files
+1.  Connect to your Aranet4 through Bluetooth on your phone 📱 using the Aranet4 app (available on the App Store and Google Play Store)
+2.  Export Aranet data to a cloud drive that syncs with your computer, like iCloud. Share menu \>\> save to files \>\> new folder (name it *Aranet4* or something) \>\> save
+3.  Use `read_aranet("path/to/your/aranet/files")` to read in the files
 
 ```{r example}
 library(aranet4r)
@@ -47,6 +49,7 @@ df <- read_aranet(system.file("extdata", package = "aranet4r"))
 ```
 
 ```{r df}
-df
+dplyr::glimpse(df)
 ```
 
+![Saving an Aranet4 CSV from an iOS device](man/figures/README-savecsv.GIF)

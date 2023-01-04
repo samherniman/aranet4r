@@ -52,4 +52,4 @@ df <- read_aranet(system.file("extdata", package = "aranet4r"))
 dplyr::glimpse(df)
 ```
 
-![Saving an Aranet4 CSV from an iOS device](man/figures/README-savecsv.GIF)
+![Saving an Aranet4 CSV from an iOS device](man/figures/README-savecsv.GIF){width="443"}

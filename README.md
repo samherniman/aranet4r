@@ -66,5 +66,9 @@ dplyr::glimpse(df)
 #> $ export_date_time          <dttm> 2022-10-22 01:55:22, 2022-10-22 01:55:22, 2…
 ```
 
-![Saving an Aranet4 CSV from an iOS
-device](man/figures/README-savecsv.GIF)
+<figure>
+<img src="man/figures/README-savecsv.GIF" width="443"
+alt="Saving an Aranet4 CSV from an iOS device" />
+<figcaption aria-hidden="true">Saving an Aranet4 CSV from an iOS
+device</figcaption>
+</figure>
